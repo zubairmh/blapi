@@ -9,6 +9,7 @@ import (
 type User struct {
 	ID         primitive.ObjectID `bson:"_id" json:"_id"`
 	MetaMaskID string             `bson:"meta_id" json:"meta_id"`
+	Name       string             `bson:"name" json:"name"`
 }
 
 type Post struct {
