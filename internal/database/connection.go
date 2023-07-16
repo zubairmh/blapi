@@ -34,15 +34,18 @@ func init() {
 }
 
 func GetUser(meta_id string) (User, error) {
-	user := User{}
-	err := users.FindOne(ctx, bson.M{meta_id: meta_id}).Decode(&user)
+	var user User
+	err := users.FindOne(ctx, bson.M{"meta_id": meta_id}).Decode(&user)
 	log.Printf("Get User %s", meta_id)
+	if err != nil {
+		log.Println(err)
+	}
 	return user, err
 }
 
 func CreateUser(meta_id string, name string) User {
 	u, err := GetUser(meta_id)
-	if err != nil {
+	if err == nil {
 		log.Printf("User %s exists", u.MetaMaskID)
 		return u
 	}

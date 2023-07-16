@@ -15,6 +15,18 @@ func init() {
 			method:  "GET",
 			handler: homePage,
 		},
+		"/posts": {
+			method:  "GET",
+			handler: getPosts,
+		},
+		"/createpost": {
+			method:  "GET",
+			handler: createPost,
+		},
+		"/createuser": {
+			method:  "GET",
+			handler: createUser,
+		},
 	}
 }
 func createRoutes(router *httprouter.Router) {

@@ -1,8 +1,10 @@
 localhost:5555 {
     route /api/* {
-        reverse_proxy :5000
+        handle_path /api/* {
+            reverse_proxy localhost:5000
+        }
     }
-    route /* {
+    route * {
         reverse_proxy :3000
     }
 }
