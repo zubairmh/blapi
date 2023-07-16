@@ -24,7 +24,7 @@ A Caddy Proxy has been set up to
     
 - Map the go backend API to /api
 - Map the nextjs frontend to /
-- (Optionally) Load balance api with sync.WaitGroup
+- (Optionally) Load balance api with goroutine workers
 
 ## Contributing
 
