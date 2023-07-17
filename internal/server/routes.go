@@ -20,7 +20,7 @@ func init() {
 			handler: getPosts,
 		},
 		"/createpost": {
-			method:  "GET",
+			method:  "POST",
 			handler: createPost,
 		},
 		"/createuser": {

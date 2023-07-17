@@ -19,7 +19,7 @@ type Post struct {
 	Title        string             `bson:"title" json:"title"`
 	Description  string             `bson:"description" json:"description"`
 	Deadline     time.Time          `bson:"deadline" json:"deadline"`
-	Bounty       float32            `bson:"bounty" json:"bounty"`
+	Bounty       float64            `bson:"bounty" json:"bounty"`
 }
 
 type Application struct {

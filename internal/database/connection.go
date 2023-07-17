@@ -57,8 +57,8 @@ func CreateUser(meta_id string, name string) User {
 	return u
 }
 
-func CreateBounty(meta_id string, bounty float32, title string, description string, deadline time.Time) Post {
-	u, _ := GetUser(meta_id)
+func CreateBounty(meta_id string, bounty float64, title string, description string, deadline time.Time) Post {
+	u := CreateUser(meta_id, meta_id)
 	post := Post{
 		AuthorMetaID: meta_id,
 		Author:       u.Name,
@@ -93,7 +93,7 @@ func GetApplications(post_id primitive.ObjectID) []Application {
 }
 
 func CreateApplication(meta_id string, description string, post_id primitive.ObjectID) {
-	u, _ := GetUser(meta_id)
+	u := CreateUser(meta_id, meta_id)
 	applications.InsertOne(ctx,
 		Application{
 			Author:       u.Name,
